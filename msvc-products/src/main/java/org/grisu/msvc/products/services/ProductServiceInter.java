@@ -1,13 +1,19 @@
 package org.grisu.msvc.products.services;
 
-import org.grisu.msvc.products.entities.Product;
+
+import org.grisu.libs.msvc.commons.entities.Product;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ProductServiceInter {
+
     List<Product> listar();
-    Product buscar(Long id);
+
+    Optional<Product> buscarPorId(Long id);
+
     void guardar(Product product);
+
     void eliminar(Product product);
 
 }
