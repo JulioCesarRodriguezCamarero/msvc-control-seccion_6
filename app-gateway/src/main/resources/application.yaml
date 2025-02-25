@@ -1,0 +1,25 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: msvc-products
+          uri: lb://msvc-products
+          predicates:
+            - Path=/api/products/**
+            -
+          filters:
+            - StripPrefix=2
+            - name: SampleCookie
+              args:
+                message: Hola Caracola en productos
+                name: user
+                value: Julio
+        - id: msvc-items
+          uri: lb://msvc-items
+          predicates:
+            - Path=/api/items/**
+          filters:
+            - StripPrefix=2
+            - AddRequestHeader=token-request, julio-ane-patricia
+            - AddResponseHeader=token-response, 21-08-08
+            - AddRequestParameter=name,JULIO

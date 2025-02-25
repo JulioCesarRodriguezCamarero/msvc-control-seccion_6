@@ -5,9 +5,7 @@ import org.grisu.msvc.items.services.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 
@@ -17,7 +15,10 @@ public class ItemController {
     private final ItemService service;
 
     @GetMapping
-    public ResponseEntity<?> listar() {
+    public ResponseEntity<?> listar(@RequestParam(name = "name", required = false) String name,
+    @RequestHeader(name = "token-request", required = false) String token) {
+        System.out.println(name);
+        System.out.println(token);
         return ResponseEntity.ok().body(service.listarTodos());
     }
 
