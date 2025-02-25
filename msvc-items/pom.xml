@@ -19,6 +19,7 @@
         <spring-cloud.version>2024.0.0</spring-cloud.version>
     </properties>
     <dependencies>
+
         <dependency>
             <groupId>org.grisu</groupId>
             <artifactId>libs-msvc-commons</artifactId>
@@ -52,7 +53,10 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>

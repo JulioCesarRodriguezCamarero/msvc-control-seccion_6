@@ -1,5 +1,6 @@
 package org.grisu.msvc.items.services;
 
+import feign.FeignException;
 import lombok.RequiredArgsConstructor;
 import org.grisu.libs.msvc.commons.entities.Product;
 import org.grisu.msvc.items.clients.ProductFeignClient;
@@ -28,10 +29,13 @@ public class ItemServiceFeign implements ItemService {
 
     @Override
     public Optional<Item> buscarPorId(Long id) {
-        Product product = client.buscarPorId(id);
-        if (product.getId() == null) {
-            return Optional.empty();
+        try {
+            Product product = client.buscarPorId(id);
+            return (product.getId() != null)
+                    ? Optional.of(new Item(product, new Random().nextInt(10) + 1))
+                    : Optional.empty();
+        } catch (FeignException e) {
+            throw new RuntimeException("Error al buscar producto con id " + id + " ",e);
         }
-        return Optional.of(new Item(product, new Random().nextInt(10) + 1));
     }
 }

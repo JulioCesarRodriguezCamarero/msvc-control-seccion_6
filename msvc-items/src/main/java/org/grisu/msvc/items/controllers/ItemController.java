@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collections;
+
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @RestController
 public class ItemController {
@@ -23,7 +25,7 @@ public class ItemController {
     public ResponseEntity<?> buscarPorId(@PathVariable Long id) {
         Object resultado = service.buscarPorId(id);
         return resultado == null ?
-                ResponseEntity.status(HttpStatus.NOT_FOUND).body("El recurso no fue encontrado")
+                ResponseEntity.status(HttpStatus.NOT_FOUND).body(Collections.singletonMap("mensaje","El recurso no fue encontrado"))
                 :
                 ResponseEntity.ok(resultado);
     }

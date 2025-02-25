@@ -21,5 +21,7 @@ public class Product {
     private String name;
     private Double price;
     private LocalDateTime createdAt;
+    @Transient
+    private int port;
 
 }
