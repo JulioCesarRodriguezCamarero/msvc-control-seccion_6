@@ -12,7 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.Collections;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
@@ -36,7 +36,7 @@ public class ItemController {
     public ResponseEntity<?> buscarPorId(@PathVariable Long id) {
         Product product = new Product();
         product.setId(1L);
-        product.setCreatedAt(LocalDateTime.now());
+        product.setCreatedAt(LocalDate.now());
         product.setName("Producto Alternativo");
         product.setPrice(1.00);
 
@@ -49,6 +49,22 @@ public class ItemController {
                 ResponseEntity.ok(resultado);
     }
 
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Product guardar(@RequestBody Product product) {
+        return service.guardar(product);
+    }
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Product actualizar(@PathVariable Long id, @RequestBody Product product) {
+     return service.actualizar(product, id);
+    }
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void eliminar(@PathVariable Long id) {
+        service.eliminar(id);
+
+    }
 
     @CircuitBreaker(name = "msvc-items", fallbackMethod = "getProductAlt")
     @GetMapping("details/{id}")
@@ -77,7 +93,7 @@ public class ItemController {
     public ResponseEntity<?> getProductAlt(Throwable throwable) {
         Product product = new Product();
         product.setId(1L);
-        product.setCreatedAt(LocalDateTime.now());
+        product.setCreatedAt(LocalDate.now());
         product.setName("Producto Alternativo");
         product.setPrice(1.00);
         return ResponseEntity.ok(new Item(product, 5));

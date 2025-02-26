@@ -43,8 +43,8 @@ public class ProductServiceImpl implements ProductServiceInter {
 
     @Transactional
     @Override
-    public void guardar(Product product) {
-        repository.save(product);
+    public Product guardar(Product product) {
+      return repository.save(product);
     }
     @Transactional
     @Override

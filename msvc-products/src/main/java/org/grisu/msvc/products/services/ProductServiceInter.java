@@ -12,7 +12,7 @@ public interface ProductServiceInter {
 
     Optional<Product> buscarPorId(Long id);
 
-    void guardar(Product product);
+    Product guardar(Product product);
 
     void eliminar(Product product);
 

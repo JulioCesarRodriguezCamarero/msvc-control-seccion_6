@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -20,7 +20,7 @@ public class Product {
     private Long id;
     private String name;
     private Double price;
-    private LocalDateTime createdAt;
+    private LocalDate createdAt;
     @Transient
     private int port;
 

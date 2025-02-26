@@ -6,13 +6,16 @@ import org.grisu.libs.msvc.commons.entities.Product;
 import org.grisu.msvc.items.clients.ProductFeignClient;
 import org.grisu.msvc.items.models.Item;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 import java.util.stream.Collectors;
 
+@Primary
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @Service
 public class ItemServiceFeign implements ItemService {
@@ -35,7 +38,23 @@ public class ItemServiceFeign implements ItemService {
                     ? Optional.of(new Item(product, new Random().nextInt(10) + 1))
                     : Optional.empty();
         } catch (FeignException e) {
-            throw new RuntimeException("Error al buscar producto con id " + id + " ",e);
+            throw new RuntimeException("Error al buscar producto con id " + id + " ", e);
         }
+    }
+
+    @Override
+    public Product guardar(Product product) {
+        return client.guardar(product);
+    }
+
+    @Override
+    public Product actualizar(Product product, Long id) {
+        product.setCreatedAt(LocalDate.now());
+        return client.actualizar(id, product);
+    }
+
+    @Override
+    public void eliminar(Long id) {
+        client.eliminar(id);
     }
 }
