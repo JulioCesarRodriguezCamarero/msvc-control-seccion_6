@@ -1,0 +1,58 @@
+{
+  "properties": [
+    {
+      "name": "resilience4j.circuitbreaker.configs.defecto.failure-rate-threshold",
+      "type": "java.lang.String",
+      "description": "Description for resilience4j.circuitbreaker.configs.defecto.failure-rate-threshold."
+    },
+    {
+      "name": "resilience4j.circuitbreaker.configs.defecto.sliding-window-size",
+      "type": "java.lang.String",
+      "description": "Description for resilience4j.circuitbreaker.configs.defecto.sliding-window-size."
+    },
+    {
+      "name": "resilience4j.circuitbreaker.configs.defecto.wait-duration-in-open-state",
+      "type": "java.lang.String",
+      "description": "Description for resilience4j.circuitbreaker.configs.defecto.wait-duration-in-open-state."
+    },
+    {
+      "name": "resilience4j.circuitbreaker.configs.defecto.permitted-number-of-calls-in-half-open-state",
+      "type": "java.lang.String",
+      "description": "Description for resilience4j.circuitbreaker.configs.defecto.permitted-number-of-calls-in-half-open-state."
+    },
+    {
+      "name": "resilience4j.circuitbreaker.configs.defecto.slow-call-duration-threshold",
+      "type": "java.lang.String",
+      "description": "Description for resilience4j.circuitbreaker.configs.defecto.slow-call-duration-threshold."
+    },
+    {
+      "name": "resilience4j.circuitbreaker.configs.defecto.slow-call-rate-threshold",
+      "type": "java.lang.String",
+      "description": "Description for resilience4j.circuitbreaker.configs.defecto.slow-call-rate-threshold."
+    },
+    {
+      "name": "resilience4j.circuitbreaker.instances.items.base-config",
+      "type": "java.lang.String",
+      "description": "Description for resilience4j.circuitbreaker.instances.items.base-config."
+    },
+    {
+      "name": "resilience4j.timelimiter.configs.defecto.timeout-duration",
+      "type": "java.lang.String",
+      "description": "Description for resilience4j.timelimiter.configs.defecto.timeout-duration."
+    },
+    {
+      "name": "resilience4j.timelimiter.instances.items.base-config",
+      "type": "java.lang.String",
+      "description": "Description for resilience4j.timelimiter.instances.items.base-config."
+    },
+    {
+      "name": "resilience4j.circuitbreaker.instances.msvc-items.base-config",
+      "type": "java.lang.String",
+      "description": "Description for resilience4j.circuitbreaker.instances.msvc-items.base-config."
+    },
+    {
+      "name": "resilience4j.timelimiter.instances.msvc-items.base-config",
+      "type": "java.lang.String",
+      "description": "Description for resilience4j.timelimiter.instances.msvc-items.base-config."
+    }
+  ] }

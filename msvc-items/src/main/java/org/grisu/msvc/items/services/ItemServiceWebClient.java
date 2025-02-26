@@ -34,8 +34,6 @@ public class ItemServiceWebClient implements ItemService {
     public Optional<Item> buscarPorId(Long id) {
         Map<String, Long> params = new HashMap<>();
         params.put("id", id);
-        try {
-
 
             return Optional.ofNullable(
                     client.build()
@@ -46,8 +44,6 @@ public class ItemServiceWebClient implements ItemService {
                             .bodyToMono(Product.class)
                             .map(product -> new Item(product, new Random().nextInt(10) + 1))
                             .block());
-        } catch (WebClientResponseException e) {
-            return Optional.empty();
-        }
+
     }
 }
