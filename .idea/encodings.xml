@@ -8,5 +8,6 @@
     <file url="file://$PROJECT_DIR$/msvc-items/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/msvc-products/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/msvc-products/src/main/resources/application.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/msvc-users/src/main/java" charset="UTF-8" />
   </component>
 </project>

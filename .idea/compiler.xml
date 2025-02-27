@@ -8,10 +8,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="app-gateway" />
-        <module name="eureka-server" />
         <module name="config-server" />
+        <module name="eureka-server" />
       </profile>
-      <profile name="Annotation profile for msvc-items" enabled="true">
+      <profile name="Annotation profile for msvc-users" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -19,6 +19,7 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
         </processorPath>
         <module name="msvc-items" />
+        <module name="msvc-users" />
         <module name="libs-msvc-commons" />
         <module name="msvc-products" />
       </profile>
@@ -32,6 +33,7 @@
       <module name="libs-msvc-commons" options="-parameters" />
       <module name="msvc-items" options="-parameters" />
       <module name="msvc-products" options="-parameters" />
+      <module name="msvc-users" options="-parameters" />
     </option>
   </component>
 </project>
