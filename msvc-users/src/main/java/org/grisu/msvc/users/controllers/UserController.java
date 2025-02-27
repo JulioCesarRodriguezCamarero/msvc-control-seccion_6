@@ -1,7 +1,7 @@
 package org.grisu.msvc.users.controllers;
 
 import lombok.RequiredArgsConstructor;
-import org.grisu.msvc.users.entities.User;
+import org.grisu.libs.msvc.commons.entities.User;
 import org.grisu.msvc.users.services.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +19,7 @@ public class UserController {
 
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
+
         return ResponseEntity.ok(userService.getAllUsers());
     }
 

@@ -1,6 +1,6 @@
 package org.grisu.msvc.users.repository;
 
-import org.grisu.msvc.users.entities.Role;
+import org.grisu.libs.msvc.commons.entities.Role;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;

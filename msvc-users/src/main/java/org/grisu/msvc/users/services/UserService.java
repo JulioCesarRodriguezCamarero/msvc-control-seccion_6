@@ -1,6 +1,7 @@
 package org.grisu.msvc.users.services;
 
-import org.grisu.msvc.users.entities.User;
+
+import org.grisu.libs.msvc.commons.entities.User;
 
 import java.util.List;
 import java.util.Optional;

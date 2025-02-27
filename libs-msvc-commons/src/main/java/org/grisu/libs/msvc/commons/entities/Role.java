@@ -1,4 +1,4 @@
-package org.grisu.msvc.users.entities;
+package org.grisu.libs.msvc.commons.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
